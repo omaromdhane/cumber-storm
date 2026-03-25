@@ -1,0 +1,20 @@
+# Source files
+src/
+!src/index.ts
+
+# Config files
+tsconfig*.json
+vite.config.ts
+eslint.config.js
+
+# Development files
+node_modules/
+.vscode/
+*.log
+*.spec.ts
+*.test.ts
+
+# Sample files
+sample-report.json
+
+# Keep only dist and necessary files

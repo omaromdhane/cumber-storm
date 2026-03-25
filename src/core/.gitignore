@@ -1,0 +1,4 @@
+.cumberstorm
+coverage
+dist
+src/html-reporter-template

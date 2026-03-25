@@ -1,0 +1,29 @@
+{
+  "$schema": "https://turborepo.com/schema.json",
+  "ui": "tui",
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "inputs": ["$TURBO_DEFAULT$"],
+      "outputs": ["dist/**"]
+    },
+
+    "check-types": {
+      "inputs": ["**/*.ts", "**/*.tsx", "**/tsconfig*.json"]
+    },
+
+    "lint": {
+      "inputs": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", "**/eslint.config.*", "**/.eslintrc*"]
+    },
+
+    "test": {
+      "inputs": ["src/**/*.ts", "test/**/*.ts", "**/tsconfig*.json"],
+      "outputs": []
+    },
+
+    "test:coverage": {
+      "inputs": ["src/**/*.ts", "test/**/*.ts"],
+      "outputs": ["coverage/**"]
+    },
+  }
+}

@@ -1,0 +1,87 @@
+.concurrency-graph {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.concurrency-graph.empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+.concurrency-graph.empty p {
+  color: #999;
+  font-style: italic;
+}
+
+.chart-container {
+  position: relative;
+  height: 400px;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.graph-legend {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e0e0e0;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.legend-dot.allowed {
+  background: #4CAF50;
+}
+
+.legend-dot.blocked {
+  background: #f44336;
+}
+
+.legend-note {
+  margin-left: auto;
+  font-size: 0.85rem;
+  color: #888;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .concurrency-graph {
+    padding: 1rem;
+  }
+
+  .chart-container {
+    height: 300px;
+  }
+
+  .graph-legend {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .legend-note {
+    margin-left: 0;
+  }
+}

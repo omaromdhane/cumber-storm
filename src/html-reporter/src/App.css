@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@layer base {
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background: #0f1117;
+    color: #e2e8f0;
+  }
+}
+
+/* Chart.js canvas needs explicit height */
+.chart-canvas-wrapper canvas { display: block; }
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #1e2130; }
+::-webkit-scrollbar-thumb { background: #3d4466; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #5a6490; }
+
+/* Force dark styling on native select options — Tailwind can't target these */
+select option {
+  background-color: #1a1d2e;
+  color: #e2e8f0;
+}
+
+select {
+  color-scheme: dark;
+}

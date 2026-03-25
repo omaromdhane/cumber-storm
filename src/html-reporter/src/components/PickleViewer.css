@@ -1,0 +1,223 @@
+.pickle-viewer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.pickle-viewer-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.pickle-search {
+  flex: 1;
+  min-width: 200px;
+  padding: 0.5rem 0.85rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.pickle-search:focus {
+  border-color: #667eea;
+}
+
+.filter-group {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.filter-btn {
+  padding: 0.4rem 0.9rem;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  background: white;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: #555;
+}
+
+.filter-btn.active.all    { background: #667eea; color: white; border-color: #667eea; }
+.filter-btn.active.allowed { background: #4CAF50; color: white; border-color: #4CAF50; }
+.filter-btn.active.blocked { background: #f44336; color: white; border-color: #f44336; }
+.filter-btn:not(.active):hover { background: #f5f5f5; }
+
+.pickle-count {
+  font-size: 0.85rem;
+  color: #888;
+  white-space: nowrap;
+}
+
+.pickle-table-wrapper {
+  overflow-x: auto;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+}
+
+.pickle-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.pickle-table thead th {
+  background: #667eea;
+  color: white;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.pickle-table td {
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid #f0f0f0;
+  vertical-align: middle;
+}
+
+.pickle-row {
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.pickle-row:hover { background: #f7f8ff; }
+.pickle-row.expanded { background: #eef0ff; }
+.pickle-row.was-blocked { border-left: 3px solid #f44336; }
+.pickle-row.was-allowed { border-left: 3px solid #4CAF50; }
+
+.pickle-name {
+  font-weight: 500;
+  color: #333;
+  max-width: 280px;
+}
+
+.pickle-uri {
+  color: #888;
+  font-size: 0.82rem;
+  max-width: 220px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pickle-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.tag-badge {
+  background: #eef0ff;
+  color: #667eea;
+  border-radius: 12px;
+  padding: 0.15rem 0.55rem;
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+
+.text-center { text-align: center; }
+
+.status-badge {
+  display: inline-block;
+  padding: 0.2rem 0.65rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.status-badge.allowed { background: #e8f5e9; color: #4CAF50; }
+.status-badge.blocked { background: #ffebee; color: #f44336; }
+
+/* Expanded detail row */
+.pickle-detail-row td {
+  background: #f7f8ff;
+  padding: 0;
+}
+
+.pickle-detail {
+  padding: 1rem 1.5rem;
+  border-top: 1px dashed #c5caf5;
+}
+
+.pickle-detail p {
+  margin: 0.25rem 0;
+  font-size: 0.88rem;
+  color: #555;
+}
+
+.pickle-detail h4 {
+  margin: 0.75rem 0 0.5rem;
+  font-size: 0.9rem;
+  color: #667eea;
+}
+
+.decision-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.decision-chip {
+  padding: 0.3rem 0.75rem;
+  border-radius: 6px;
+  border: none;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.decision-chip:hover { opacity: 0.8; }
+.decision-chip.allowed { background: #e8f5e9; color: #388e3c; }
+.decision-chip.blocked { background: #ffebee; color: #c62828; }
+
+.empty-state {
+  text-align: center;
+  color: #aaa;
+  font-style: italic;
+  padding: 2rem !important;
+}
+
+/* Pagination — reuse same pattern as DecisionModal */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.pagination button {
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.35rem 0.85rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+
+.pagination button:hover:not(:disabled) { background: #5a6fd6; }
+.pagination button:disabled { background: #ccc; cursor: default; }
+
+.view-btn {
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.3rem 0.75rem;
+  font-size: 0.82rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+.view-btn:hover { background: #5a6fd6; }
