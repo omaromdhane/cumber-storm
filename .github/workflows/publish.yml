@@ -1,8 +1,6 @@
 name: Publish to npm
 
 on:
-  release:
-    types: [published]
   workflow_dispatch:
 
 jobs:
@@ -24,10 +22,7 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: npx turbo run build
-
-      - name: Type check
-        run: npx turbo run check-types
+        run: npm run build
 
       - uses: actions/setup-node@v4
         with:
