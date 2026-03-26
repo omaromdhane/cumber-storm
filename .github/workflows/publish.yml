@@ -1,18 +1,16 @@
 name: Publish to npm
 
 on:
+  release:
+    types: [published]
   workflow_dispatch:
-    inputs:
-      dry_run:
-        description: 'Dry run (test and build without publishing)'
-        type: boolean
-        default: false
 
 jobs:
   publish:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+      id-token: write  # required for npm provenance
 
     steps:
       - uses: actions/checkout@v4
@@ -21,16 +19,22 @@ jobs:
         with:
           node-version: '20.x'
           cache: 'npm'
-          registry-url: 'https://registry.npmjs.org'
 
       - name: Install dependencies
         run: npm ci
 
       - name: Build
-        run: npm run build
+        run: npx turbo run build
+
+      - name: Type check
+        run: npx turbo run check-types
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          registry-url: 'https://registry.npmjs.org'
 
       - name: Publish @cumberstorm/core
-        if: inputs.dry_run != true
         working-directory: src/core
         run: npm publish --provenance --access public
         env:
