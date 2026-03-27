@@ -16,7 +16,7 @@
     "test:coverage": "c8 mocha"
   },
   "author": "Omar Romdhane",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@cumberstorm/reporting": "*",
     "@cucumber/cucumber": "^12.2.0",
