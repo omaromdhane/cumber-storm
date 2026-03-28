@@ -391,10 +391,6 @@ The report includes:
 The report is a single self-contained HTML file with no external dependencies.
 
 ### Example screenshots
-
-**Overview & stat cards**
-![Overview](docs/screenshots/overview.png)
-
 **Line Graph — concurrency over time**
 ![Line Graph](docs/screenshots/line-graph.png)
 
