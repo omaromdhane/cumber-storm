@@ -181,6 +181,11 @@ export class CumberStorm {
         }
     }
 
+    /** @internal - not part of the public API, for testing only */
+    public getConfig(): IUserConfig | undefined {
+        return this._userConfig;
+    }
+
     public getLogFilePath(): string {
         return this._logFilePath;
     }

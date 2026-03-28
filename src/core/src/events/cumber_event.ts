@@ -1,5 +1,4 @@
-import { UUID } from "crypto";
-import {v4 as uuidv4} from 'uuid';
+import { randomUUID } from "crypto";
 
 /**
  * Base event with automatic timestamp capture
@@ -36,7 +35,7 @@ export class CumberEvent<T = void> {
 
     constructor(...args: T extends void ? [] : [T]) {
         this.timestamp = new Date();
-        this.id = uuidv4();
+        this.id = randomUUID();
 
         if (args.length > 0) {
             (this.data as any) = args[0];

@@ -3,7 +3,15 @@
   "version": "0.0.5",
   "description": "Core package for parallel cucumber tests",
   "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
   "files": [
     "dist"
   ],
@@ -20,7 +28,6 @@
   "dependencies": {
     "@cucumber/cucumber": "^12.2.0",
     "open": "^10.0.0",
-    "uuid": "^13.0.0",
     "winston": "^3.18.3",
     "zod": "^4.1.12"
   },
