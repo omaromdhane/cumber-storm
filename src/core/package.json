@@ -3,7 +3,15 @@
   "version": "0.0.1",
   "description": "Core package for parallel cucumber tests",
   "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
   "files": [
     "dist"
   ],
@@ -18,14 +26,13 @@
   "author": "Omar Romdhane",
   "license": "MIT",
   "dependencies": {
-    "@cumberstorm/reporting": "*",
     "@cucumber/cucumber": "^12.2.0",
     "open": "^10.0.0",
-    "uuid": "^13.0.0",
     "winston": "^3.18.3",
     "zod": "^4.1.12"
   },
   "devDependencies": {
+    "@cumberstorm/reporting": "*",
     "@repo/eslint-config": "*",
     "@types/chai": "^5.2.2",
     "@types/js-yaml": "^4.0.9",
