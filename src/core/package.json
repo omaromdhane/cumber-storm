@@ -1,6 +1,6 @@
 {
   "name": "@cumberstorm/core",
-  "version": "0.0.4",
+  "version": "0.0.1",
   "description": "Core package for parallel cucumber tests",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
